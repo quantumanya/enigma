@@ -26,6 +26,22 @@
     }
 }
 
+/* New class for full-screen overlay */
+@media (max-width: 768px) {
+    .fullScreenOverlay {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        min-width: 0; /* Reset min-width */
+        overflow: auto;
+        z-index: 100;
+        opacity: 0.9;
+        background-color: black;
+    }
+}
+
 /* Circle Small Style */
 .circleSmall {
     width: 90px;
@@ -99,4 +115,20 @@
     font-size: 10pt;
     color: #373737;
 }
+
+
+/* If you can modify Vienn.js */
+.viennContainer {
+    width: 100%; /* Full width */
+    /* Add any other styling required for Vienn */
+}
+
+
+
+/* If you cannot modify Vienn.js */
+.viennWrapper {
+    width: 100%; /* Full width */
+    /* Add any other styling required for the wrapper */
+}
+
 

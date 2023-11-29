@@ -14,8 +14,10 @@ function Circles() {
         <div>LEFT text </div>  
       </div>
 
-      <Vienn setDimContent={setDimContent} setActiveContent={setActiveContent}/>
-
+        <div className="viennWrapper">
+           <Vienn setDimContent={setDimContent} setActiveContent={setActiveContent}/>
+        </div>
+        
       {/* Content Div: RIGHT */}
       <div className={`contentDivStyle ${activeContent ? 'fullScreenOverlay' : ''}`}>
         {activeContent && <ActiveContent currentState={activeContent} />}

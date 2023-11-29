@@ -18,6 +18,10 @@ function Vienn({setDimContent, setActiveContent}) {
 
   return (
 
+
+    <div className="viennContainer">
+
+
     <div className="relative w-96 h-96 flex items-center justify-center bg-black">
       
       <Circle
@@ -137,6 +141,8 @@ function Vienn({setDimContent, setActiveContent}) {
 
 
     </div>
+
+        </div>
   )
 }
 
