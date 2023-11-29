@@ -3,68 +3,9 @@ import Circle from './Circle';
 import Eye from './Eye';
 import ActiveContent from './ActiveContent';
 import ThreeEye from './ThreeEye';
-// import {CircleSmall, CircleCenter, Circle} from './Circle';
+import {CircleSmall, CircleCenter} from './Circle';
 // import {CircleSmall} from './Circle';
-
 import './Styles.css'; // Import the CSS file here
-
-const CircleSmall = ({deg=0, x=0, y=45, id, onMouseEnter, onMouseLeave, setActiveContent, setDimContent }) => {
-  const style = {
-    width: '90px',
-    height: '170px',
-    backgroundColor: 'blue',
-    borderRadius: '50%',
-    position: 'absolute',
-    zIndex: 20, // setting z-index to 20
-    top: `${y}%`,         // Adjusted for absolute positioning
-    left: `${x}%`,        // Adjusted for absolute positioning
-    transform: `rotate(${deg}deg)`, 
-    opacity: '0',
-  };
-
-  const handleMouseEnter = () => {
-      setActiveContent(id);
-      onMouseEnter();
-      setDimContent(true);
-    };
-    
-    const handleMouseLeave = () => {
-      onMouseLeave();
-      setDimContent(false);
-      setActiveContent(null);
-  };
-
-  return <div style={style} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />;
-};
-
-const CircleCenter = ({onMouseEnter, onMouseLeave, setShowThreeEye, setShowHiddenLayer }) => {
-  const style = {
-    width: '80px',
-    height: '80px',
-    backgroundColor: 'red',
-    borderRadius: '50%',
-    position: 'absolute',
-    zIndex: 40, // setting z-index to 20
-    top: `45%`,         // Adjusted for absolute positioning
-    left: `39%`,        // Adjusted for absolute positioning
-    opacity: '0',
-  };
-
-
-  const handleMouseEnter = () => {
-      onMouseEnter();
-      setShowThreeEye(true);
-    //   setShowHiddenLayer(true);
-    };
-    
-    const handleMouseLeave = () => {
-        onMouseLeave();
-        setShowThreeEye(false);
-        // setShowHiddenLayer(false);
-  };
-
-  return <div style={style} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />;
-};
 
 function Circles() {
   const [activeCircle, setActiveCircle] = useState(null);
