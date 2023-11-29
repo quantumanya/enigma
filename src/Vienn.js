@@ -1,4 +1,11 @@
-function Vienn({}) {
+import React, { useState } from 'react';
+import Circle from './Circle';
+import Eye from './Eye';
+// import ActiveContent from './ActiveContent';
+import ThreeEye from './ThreeEye';
+import {CircleSmall, CircleCenter} from './Circle';
+
+function Vienn({setDimContent, setActiveContent}) {
 
     const [activeCircle, setActiveCircle] = useState(null);
     const [showEyeSet1, setShowEyeSet1] = useState(false); // State for Eye of set 1
@@ -132,3 +139,5 @@ function Vienn({}) {
     </div>
   )
 }
+
+export default Vienn; 
