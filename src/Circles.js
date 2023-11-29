@@ -3,23 +3,10 @@ import Circle from './Circle';
 import Eye from './Eye';
 import ActiveContent from './ActiveContent';
 import ThreeEye from './ThreeEye';
+// import {CircleSmall, CircleCenter, Circle} from './Circle';
+// import {CircleSmall} from './Circle';
 
-// Style for the content div
-  const contentDivStyle = {
-    position: 'absolute',
-    left: '100%', // Position to the right of the circles
-    top: 0,
-    minWidth: '400px', // Adjust as needed
-    // height: '100%',
-    backgroundColor: '#000', // Light background for visibility
-    padding: '20px',
-    boxSizing: 'border-box',
-    color: 'white',
-    transition: 'opacity 0.5s ease-in-out', // Smooth transition for opacity
-    
-  };
-
-
+import './Styles.css'; // Import the CSS file here
 
 const CircleSmall = ({deg=0, x=0, y=45, id, onMouseEnter, onMouseLeave, setActiveContent, setDimContent }) => {
   const style = {
@@ -92,7 +79,6 @@ function Circles() {
 
   const [text, setText] = useState('Default Text');
 
-
   const contentDictionary = {
         what: 'Whatttt',
         when: 'wheeeen',
@@ -105,52 +91,6 @@ function Circles() {
     setText(contentDictionary[newText]);
   };
 
-  // Style for the content div
-  const leftContentDivStyle = {
-    position: 'absolute',
-    right: '100%', // Position to the left of the circles
-    top: 0,
-    minWidth: '400px',
-    padding: '20px',
-    boxSizing: 'border-box',
-    color: 'gray',
-    transition: 'opacity 0.5s ease-in-out', // Smooth transition for opacity
-    opacity: dimContent ? 0.3 : 1, // Control visibility with opacity
-    fontFamily: 'monospace',
-  };
-  // Style for the content div
-  const leftLeftContentDivStyle = {
-    position: 'absolute',
-    right: '200%', // Position to the left of the circles
-    top: 0,
-    minWidth: '80px',
-    padding: '20px',
-    boxSizing: 'border-box',
-    opacity: dimContent ? 0.3 : 1, // Control visibility with opacity
-    color: 'gray',
-    transition: 'opacity 0.5s ease-in-out', // Smooth transition for opacity
-    fontFamily: 'monospace',
-  };
-  
-  const hiddenLayerStyle = {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    width: '100vw',
-    height: '100vh',
-    backgroundColor: 'black',
-    zIndex: 25, // High enough to cover everything
-    opacity: showHiddenLayer ? 0.9 : 0, // Control visibility with opacity
-    transition: 'opacity 0.5s ease-in-out', // Smooth transition for opacity
-    pointerEvents: showHiddenLayer ? 'auto' : 'none', // Prevent interaction when not visible
-  };
-  
-  const buttonStyle = {
-    padding: '10pt',
-    textTransform: 'uppercase',
-    fontSize: '10pt',
-    color: '#373737'
-  }
 
   return (
 <div className="p-2 flex items-center justify-center bg-black relative">
@@ -269,21 +209,19 @@ function Circles() {
 
       {/* Hidden Layer */}
       {/* z: 25 */}
-      <div style={hiddenLayerStyle}></div>
+      <div className='hiddenLayerStyle' style={{ opacity: showHiddenLayer ? 0.9 : 0, pointerEvents: showHiddenLayer ? 'auto' : 'none' }}
+     ></div>
 
-
-
-
-    <div style={leftLeftContentDivStyle}>
-              <a href="#" style={buttonStyle}  onClick={() => changeText('what')}>What</a><br/>
-              <a href="#" style={buttonStyle}  onClick={() => changeText('when')}>When</a><br/>
-              <a href="#" style={buttonStyle}  onClick={() => changeText('who')}>Who</a><br/>
-              <a href="#" style={buttonStyle}  onClick={() => changeText('why')}>Why</a><br/>
-              <a href="#" style={buttonStyle}  onClick={() => changeText('why')}>Where</a><br/>
-              <a href="#" style={buttonStyle}  onClick={() => changeText('why')}>Whom</a><br/>
+    <div className='leftLeftContentDivStyle'>
+              <a href="#" className='buttonStyle'  onClick={() => changeText('what')}>What</a><br/>
+              <a href="#" className='buttonStyle'  onClick={() => changeText('when')}>When</a><br/>
+              <a href="#" className='buttonStyle'  onClick={() => changeText('who')}>Who</a><br/>
+              <a href="#" className='buttonStyle'  onClick={() => changeText('why')}>Why</a><br/>
+              <a href="#" className='buttonStyle'  onClick={() => changeText('why')}>Where</a><br/>
+              <a href="#" className='buttonStyle'  onClick={() => changeText('why')}>Whom</a><br/>
        </div>
     {/* Content Div: LEFT */}
-      <div style={leftContentDivStyle}>
+      <div className='leftContentDivStyle'>
 
          <div className="App">
               {/* Buttons to change the text */}
@@ -307,7 +245,7 @@ function Circles() {
       </div>
 
     {/* Content Div: RIGHT */}
-      <div style={contentDivStyle}>
+      <div className='contentDivStyle'>
         {/* Display content based on activeContent state */}
         {activeContent && <ActiveContent currentState={activeContent} />}
       </div>

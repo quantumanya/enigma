@@ -1,9 +1,49 @@
-
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import { motion } from 'framer-motion'; // framer-motion@4.1.17
 
-function Circle({ position, number, setActiveCircle, activeCircle, setActiveContent, setDimContent}) {
+const CircleSmall = ({deg=0, x=0, y=45, id, onMouseEnter, onMouseLeave, setActiveContent, setDimContent }) => {
+  const style = {
+    width: '90px',
+    height: '170px',
+    backgroundColor: 'blue',
+    borderRadius: '50%',
+    position: 'absolute',
+    zIndex: 20, // setting z-index to 20
+    top: `${y}%`,         // Adjusted for absolute positioning
+    left: `${x}%`,        // Adjusted for absolute positioning
+    transform: `rotate(${deg}deg)`, 
+    opacity: '0',
+  };
+
+  const handleMouseEnter = () => {
+      setActiveContent(id);
+      onMouseEnter();
+      setDimContent(true);
+    };
+    
+    const handleMouseLeave = () => {
+      onMouseLeave();
+      setDimContent(false);
+      setActiveContent(null);
+  };
+
+  return <div style={style} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />;
+};
+
+export const CircleCenter = ({onMouseEnter, onMouseLeave, setShowThreeEye, setShowHiddenLayer }) => {
+  const handleMouseEnter = () => {
+      onMouseEnter();
+      setShowThreeEye(true);
+    };
+    const handleMouseLeave = () => {
+        onMouseLeave();
+        setShowThreeEye(false);
+  };
+  return <div className='circleCenter' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />;
+};
+
+export const Circle = ({ position, number, setActiveCircle, activeCircle, setActiveContent, setDimContent}) => {
   const circleClasses =
     'absolute flex items-center justify-center rounded-full w-60 h-60 border-2 border-white transition-all duration-1000';
   const isActive = activeCircle === number;
