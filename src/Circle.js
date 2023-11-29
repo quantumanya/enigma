@@ -70,6 +70,7 @@ export const Circle = ({ position, number, setActiveCircle, activeCircle, setAct
       })}
       onMouseEnter={handleMouseEnter} // Use the function here
       onMouseLeave={handleMouseLeave}
+      onClick={handleMouseEnter}
       whileHover={{ scale: 1.00 }}
     >
       <div className="text-white text-3xl font-bold">{number}</div>
