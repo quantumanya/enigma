@@ -306,11 +306,6 @@ function Circles() {
                 </p>
       </div>
 
-       
-
-
-
-
     {/* Content Div: RIGHT */}
       <div style={contentDivStyle}>
         {/* Display content based on activeContent state */}

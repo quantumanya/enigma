@@ -18,8 +18,8 @@ const App = () => {
           }}>
           <span style={{color: '#bdbdbd', fontSize: '14pt'}}>FINAL</span>
           <span style={{color: '#bdbdbd', fontSize: '14pt'}}>ENIGMA</span>
-          <span style={{color: '#bdbdbd', fontSize: '10pt'}}>[PODCAST]</span>  
-          <span style={{color: '#525252', fontSize: '10pt'}}> Exploring a Scientific Quest to Unlock Human and Machine Consciousness</span>
+          {/* <span style={{color: '#bdbdbd', fontSize: '10pt'}}>[PODCAST]</span>   */}
+          {/* <span style={{color: '#525252', fontSize: '10pt'}}> Exploring a Scientific Quest to Unlock Human and Machine Consciousness</span> */}
             
         </span>
       </div>
