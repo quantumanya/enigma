@@ -1,0 +1,105 @@
+.mobileOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+/* Content Div Style */
+.contentDivStyle {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    min-width: 400px;
+    background-color: #000;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Circle Small Style */
+.circleSmall {
+    width: 90px;
+    height: 170px;
+    background-color: blue;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 20;
+    opacity: 0;
+    /* top and left will be set inline due to their dynamic nature */
+    /* transform will be set inline due to its dynamic nature */
+}
+
+/* Circle Center Style */
+.circleCenter {
+    width: 80px;
+    height: 80px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 40;
+    opacity: 0;
+    /* top and left will be set inline due to their dynamic nature */
+}
+
+/* Left Content Div Style */
+.leftContentDivStyle {
+    position: absolute;
+    right: 100%;
+    top: 0;
+    min-width: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+    color: gray;
+    transition: opacity 0.5s ease-in-out;
+    font-family: monospace;
+    /* opacity will be set inline due to its dynamic nature */
+}
+
+/* Left Left Content Div Style */
+.leftLeftContentDivStyle {
+    position: absolute;
+    right: 200%;
+    top: 0;
+    min-width: 80px;
+    padding: 20px;
+    box-sizing: border-box;
+    color: gray;
+    transition: opacity 0.5s ease-in-out;
+    font-family: monospace;
+    /* opacity will be set inline due to its dynamic nature */
+}
+
+/* Hidden Layer Style */
+.hiddenLayerStyle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    z-index: 25;
+    transition: opacity 0.5s ease-in-out;
+    /* opacity and pointer-events will be set inline due to their dynamic nature */
+}
+
+/* Button Style */
+.buttonStyle {
+    padding: 10pt;
+    text-transform: uppercase;
+    font-size: 10pt;
+    color: #373737;
+}
+
