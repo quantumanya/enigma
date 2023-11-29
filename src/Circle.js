@@ -60,6 +60,12 @@ export const Circle = ({ position, number, setActiveCircle, activeCircle, setAct
       setDimContent(false)
   };
 
+  const handleTouch = () => {
+    setActiveCircle(number);
+    setActiveContent(number);
+    setDimContent(true);
+  };
+
   return (
     <motion.div
       className={classNames(circleClasses, position, {
@@ -70,6 +76,7 @@ export const Circle = ({ position, number, setActiveCircle, activeCircle, setAct
       })}
       onMouseEnter={handleMouseEnter} // Use the function here
       onMouseLeave={handleMouseLeave}
+      onTouchStart={handleTouch} // Use touch event for mobile devices
       onClick={handleMouseEnter}
       whileHover={{ scale: 1.00 }}
     >
