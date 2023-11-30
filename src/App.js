@@ -17,7 +17,7 @@ const App = () => {
             paddingTop: '14pt',
             }}>
 
-           Final Enigma 
+           Final Enigma 2
 
           </div>
         </div>

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const contentDictionary = {
     Neuroscience: {
         header: 'Neuroscience',
-        body: 'This is the body text for Content 1.'
+        body: "<ul><li><strong style='color:white;'>Hard Problem of Consciousness:</strong> <span style='color:gray;'>Investigating why and how subjective experiences arise from physical brain processes.</span></li><br><li><strong style='color:white;'>Decision-Making and Free Will:</strong> <span style='color:gray;'>What is the neural basis of decision-making and is there free will?</span></li><br><li><strong style='color:white;'>Qualia:</strong> <span style='color:gray;'>Understanding the nature and origin of subjective sensory experiences, such as the way we perceive colors or experience pain.</span></li><br><li><strong style='color:white;'>Brain Integration and Modularity:</strong> <span style='color:gray;'>How are different brain regions integrated to produce coherent behavior and cognition?</span></li></ul>"
     },
     Physics: {
         header: 'Physics',
@@ -33,7 +33,7 @@ const contentDictionary = {
 const transitionStyle = {
     transition: 'opacity 0.3s ease-in-out',
     opacity: 1,
-    border: 'solid',
+    // border: 'solid',
 };
 
 const ActiveContent = ({ currentState, setActiveContent }) => {
@@ -73,9 +73,8 @@ const ActiveContent = ({ currentState, setActiveContent }) => {
                     <h1 style={{ fontSize: '24pt', fontFamily: 'monospace' }}>
                         {currentContent.header}
                     </h1>
-                    <p style={{ fontFamily: 'monospace' }}>
-                        {currentContent.body}
-                    </p>
+                    <p style={{ fontFamily: 'monospace' }} dangerouslySetInnerHTML={{ __html: currentContent.body }}>
+</p>
                 </div>
             ) : null}
         </>
