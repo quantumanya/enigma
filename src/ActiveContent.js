@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 // Define a dictionary with various texts for header and body
 const contentDictionary = {
@@ -32,9 +33,10 @@ const contentDictionary = {
 const transitionStyle = {
     transition: 'opacity 0.3s ease-in-out',
     opacity: 1,
+    border: 'solid',
 };
 
-const ActiveContent = ({ currentState }) => {
+const ActiveContent = ({ currentState, setActiveContent }) => {
     const [visible, setVisible] = useState(true);
     const [displayContent, setDisplayContent] = useState(currentState);
     const [style, setStyle] = useState({ ...transitionStyle });
@@ -51,27 +53,38 @@ const ActiveContent = ({ currentState }) => {
             setStyle({ ...transitionStyle, opacity: 1 });
         }, 300); // Match this duration with your CSS transition time
 
-        return () => clearTimeout(timeoutId);
-    }, [currentState]);
+        // Event handler to close the content on tap
+        const handleOutsideTap = (e) => {
+            setVisible(false);
+            setActiveContent(null);
+        };
+
+        // Attach the event listener
+        window.addEventListener('touchstart', handleOutsideTap);
+
+        return () => {
+            clearTimeout(timeoutId);
+            // Remove the event listener when the component unmounts
+            window.removeEventListener('touchstart', handleOutsideTap);
+        };
+    }, [currentState, setActiveContent]);
 
     const currentContent = contentDictionary[displayContent];
 
     return (
-        <div style={style}>
-            {currentContent ? (
-                <>
+        <>
+            {visible && currentContent ? (
+                <div style={style}>
                     <h1 style={{
-                      fontSize: '24pt',
-                      fontFamily: 'monospace'
+                        fontSize: '24pt',
+                        fontFamily: 'monospace'
                     }}>{currentContent.header}</h1>
                     <p style={{
-                      fontFamily: 'monospace'
+                        fontFamily: 'monospace'
                     }}>{currentContent.body}</p>
-                </>
-            ) : (
-                <div>No content available for {currentState} state.</div>
-            )}
-        </div>
+                </div>
+            ) : null}
+        </>
     );
 };
 
