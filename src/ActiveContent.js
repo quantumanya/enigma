@@ -42,29 +42,24 @@ const ActiveContent = ({ currentState, setActiveContent }) => {
     const [style, setStyle] = useState({ ...transitionStyle });
 
     useEffect(() => {
-        // Start the fade-out effect
         setStyle({ ...transitionStyle, opacity: 0 });
 
         const timeoutId = setTimeout(() => {
-            // Update content after fade-out
             setDisplayContent(currentState);
-
-            // Start the fade-in effect
             setStyle({ ...transitionStyle, opacity: 1 });
-        }, 300); // Match this duration with your CSS transition time
+        }, 300);
 
-        // Event handler to close the content on tap
         const handleOutsideTap = (e) => {
-            setVisible(false);
-            setActiveContent(null);
+            if (!e.target.closest('.active-content')) {
+                setVisible(false);
+                setActiveContent(null);
+            }
         };
 
-        // Attach the event listener
         window.addEventListener('touchstart', handleOutsideTap);
 
         return () => {
             clearTimeout(timeoutId);
-            // Remove the event listener when the component unmounts
             window.removeEventListener('touchstart', handleOutsideTap);
         };
     }, [currentState, setActiveContent]);
@@ -74,14 +69,13 @@ const ActiveContent = ({ currentState, setActiveContent }) => {
     return (
         <>
             {visible && currentContent ? (
-                <div style={style}>
-                    <h1 style={{
-                        fontSize: '24pt',
-                        fontFamily: 'monospace'
-                    }}>{currentContent.header}</h1>
-                    <p style={{
-                        fontFamily: 'monospace'
-                    }}>{currentContent.body}</p>
+                <div className="active-content" style={style}>
+                    <h1 style={{ fontSize: '24pt', fontFamily: 'monospace' }}>
+                        {currentContent.header}
+                    </h1>
+                    <p style={{ fontFamily: 'monospace' }}>
+                        {currentContent.body}
+                    </p>
                 </div>
             ) : null}
         </>
