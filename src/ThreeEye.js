@@ -9,7 +9,7 @@ function CircleClip({ id, cx, cy, r }) {
   );
 }
 
-function ThreeEye({ circle1, circle2, circle3, showEye, idPrefix, z }) {
+function ThreeEye({ circle1, circle2, circle3, showEye, idPrefix }) {
   const radius = 120;
   const clipPathId1 = `${idPrefix}-clip-1`;
   const clipPathId2 = `${idPrefix}-clip-2`;

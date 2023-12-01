@@ -34,12 +34,10 @@ export const CircleSmall = ({deg=0, x=0, y=45, id, onMouseEnter, onMouseLeave, s
 export const CircleCenter = ({onMouseEnter, onMouseLeave, setShowThreeEye, setShowHiddenLayer }) => {
     const handleMouseEnter = () => {
         onMouseEnter();
-        setActiveContent("Physics");
         setShowThreeEye(true);
     };
     const handleMouseLeave = () => {
         onMouseLeave();
-        setActiveContent(null);
         setShowThreeEye(false);
     };
     return <div className='circleCenter' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />;
@@ -50,28 +48,37 @@ export const Circle = ({ position, number, setActiveCircle, activeCircle, setAct
         'absolute flex items-center justify-center rounded-full w-60 h-60 border-2 border-white transition-all duration-1000';
     const isActive = activeCircle === number;
 
-    const handleTap = (event) => {
-        // event.preventDefault(); // Prevents the mobile browser from interpreting this as a hover event
-        setActiveCircle(number);
-        setActiveContent(number);
-        setDimContent(true);
-    };
-
     const handleMouseEnter = () => {
-        if (window.innerWidth > 1024) { // Only trigger for non-mobile devices
-            setActiveCircle(number);
-            setActiveContent(number);
-            setDimContent(true);
-        }
+        onMouseEnter();
+        setShowThreeEye(true);
+    };
+    const handleMouseLeave = () => {
+        onMouseLeave();
+        setShowThreeEye(false);
     };
 
-    const handleMouseLeave = () => {
-        if (window.innerWidth > 1024) { // Only trigger for non-mobile devices
-            setActiveCircle(null);
-            setActiveContent(null);
-            setDimContent(false);
-        }
-    };
+    // const handleTap = (event) => {
+    //     // event.preventDefault(); // Prevents the mobile browser from interpreting this as a hover event
+    //     setActiveCircle(number);
+    //     setActiveContent(number);
+    //     setDimContent(true);
+    // };
+
+    // const handleMouseEnter = () => {
+    //     if (window.innerWidth > 1024) { // Only trigger for non-mobile devices
+    //         setActiveCircle(number);
+    //         setActiveContent(number);
+    //         setDimContent(true);
+    //     }
+    // };
+
+    // const handleMouseLeave = () => {
+    //     if (window.innerWidth > 1024) { // Only trigger for non-mobile devices
+    //         setActiveCircle(null);
+    //         setActiveContent(null);
+    //         setDimContent(false);
+    //     }
+    // };
 
     return (
         <motion.div
@@ -83,7 +90,7 @@ export const Circle = ({ position, number, setActiveCircle, activeCircle, setAct
             })}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            onTouchStart={handleTap} // Separate touch event handler
+            // onTouchStart={handleTap} // Separate touch event handler
         >
             <div className="text-white text-3xl font-bold">{number}</div>
         </motion.div>

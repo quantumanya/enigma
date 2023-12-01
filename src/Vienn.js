@@ -5,6 +5,8 @@ import Eye from './Eye';
 import ThreeEye from './ThreeEye';
 import {CircleSmall, CircleCenter} from './Circle';
 
+import ActiveContent from './ActiveContent';
+
 function Vienn({setDimContent, setActiveContent}) {
 
     const [activeCircle, setActiveCircle] = useState(null);
@@ -121,7 +123,6 @@ function Vienn({setDimContent, setActiveContent}) {
                     showEye={true}
                     z={100}
                     idPrefix="three"
-                    setActiveContent={setActiveContent}
                     showThreeEye={showThreeEye}
                     />
     }
@@ -137,7 +138,12 @@ function Vienn({setDimContent, setActiveContent}) {
       {/* Hidden Layer */}
       {/* z: 25 */}
       <div className='hiddenLayerStyle' style={{ opacity: showHiddenLayer ? 0.9 : 0, pointerEvents: showHiddenLayer ? 'auto' : 'none' }}
-     ></div>
+     >
+
+        {/* <ActiveContent currentState="Neuroscience" setActiveContent={setActiveContent}/> */}
+        Test
+
+     </div>
 
 
     </div>
