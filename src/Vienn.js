@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 import Circle from './Circle';
 import Eye from './Eye';
-// import ActiveContent from './ActiveContent';
 import ThreeEye from './ThreeEye';
 import {CircleSmall, CircleCenter} from './Circle';
-
-import ActiveContent from './ActiveContent';
-
 function Vienn({setDimContent, setActiveContent}) {
 
     const [activeCircle, setActiveCircle] = useState(null);
@@ -14,16 +10,10 @@ function Vienn({setDimContent, setActiveContent}) {
     const [showEyeSet2, setShowEyeSet2] = useState(false); // State for Eye of set 2
     const [showEyeSet3, setShowEyeSet3] = useState(false); // State for Eye of set 3
     const [showThreeEye, setShowThreeEye] = useState(false); // State for Eye of set 3
-
-
     const [showHiddenLayer, setShowHiddenLayer] = useState(false); // State for the hidden layer
 
   return (
-
-
     <div className="viennContainer">
-
-
     <div className="relative w-96 h-96 flex items-center justify-center bg-black">
       
       <Circle
@@ -118,8 +108,6 @@ function Vienn({setDimContent, setActiveContent}) {
         showEye={showEyeSet3}
         idPrefix="an"
       />
-
-
         {
             showThreeEye && 
                     <ThreeEye 
@@ -147,10 +135,6 @@ function Vienn({setDimContent, setActiveContent}) {
       {/* z: 25 */}
       <div className='hiddenLayerStyle' style={{ opacity: showHiddenLayer ? 0.9 : 0, pointerEvents: showHiddenLayer ? 'auto' : 'none' }}
      >
-
-        {/* <ActiveContent currentState="Neuroscience" setActiveContent={setActiveContent}/> */}
-        Test
-
      </div>
 
 

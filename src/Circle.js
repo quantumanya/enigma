@@ -43,29 +43,21 @@ export const CircleCenter = ({onMouseEnter, onMouseLeave, setShowThreeEye }) => 
     return <div className='circleCenter' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />;
 };
 
-export const Circle = ({ position, number, onMouseEnter, onMouseLeave, setShowThreeEye, setActiveCircle, activeCircle, setActiveContent, setDimContent}) => {
+
+export const Circle = ({ position, number, setActiveCircle, activeCircle, setActiveContent, setDimContent}) => {
     const circleClasses =
         'absolute flex items-center justify-center rounded-full w-60 h-60 border-2 border-white transition-all duration-1000';
     const isActive = activeCircle === number;
 
-    // const handleMouseEnter = () => {
-    //     onMouseEnter();
-    //     setShowThreeEye(true);
-    // };
-    // const handleMouseLeave = () => {
-    //     onMouseLeave();
-    //     setShowThreeEye(false);
-    // };
-
     const handleTap = (event) => {
-        // event.preventDefault(); // Prevents the mobile browser from interpreting this as a hover event
+        event.preventDefault(); // Prevent default to stop triggering mouse events on touch devices
         setActiveCircle(number);
         setActiveContent(number);
         setDimContent(true);
     };
 
     const handleMouseEnter = () => {
-        if (window.innerWidth > 1024) { // Only trigger for non-mobile devices
+        if (!('ontouchstart' in window)) { // Check if it's not a touch device
             setActiveCircle(number);
             setActiveContent(number);
             setDimContent(true);
@@ -73,7 +65,7 @@ export const Circle = ({ position, number, onMouseEnter, onMouseLeave, setShowTh
     };
 
     const handleMouseLeave = () => {
-        if (window.innerWidth > 1024) { // Only trigger for non-mobile devices
+        if (!('ontouchstart' in window)) { // Check if it's not a touch device
             setActiveCircle(null);
             setActiveContent(null);
             setDimContent(false);
@@ -90,7 +82,7 @@ export const Circle = ({ position, number, onMouseEnter, onMouseLeave, setShowTh
             })}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            onTouchStart={handleTap} // Separate touch event handler
+            onTouchStart={handleTap}
         >
             <div className="text-white text-3xl font-bold">{number}</div>
         </motion.div>
