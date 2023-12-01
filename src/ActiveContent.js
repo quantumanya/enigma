@@ -9,7 +9,7 @@ const contentDictionary = {
     },
     Physics: {
         header: 'Physics',
-        body: 'This is the body text for Content 2.'
+        body: "<ul><li><strong style='color:white;'>Quantum Mechanics Interpretations:</strong> <span style='color:gray;'>How do the different interpretations of quantum mechanics explain the role of the observer or consciousness in the physical world?</span></li><br><li><strong style='color:white;'>Theory of Everything:</strong> <span style='color:gray;'>Can we develop a single theory that successfully unifies the four fundamental forces of nature?</span></li><br><li><strong style='color:white;'>Dark Matter and Dark Energy:</strong> <span style='color:gray;'>What are dark matter and dark energy, which seem to dominate the universe's mass-energy content but remain unseen?</span></li><br><li><strong style='color:white;'>Nature of Time:</strong> <span style='color:gray;'>What is the fundamental nature of time, and why does it appear to flow in one direction?</span></li></ul>"
     },
     AI: {
         header: 'AI',

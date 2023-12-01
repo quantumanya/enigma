@@ -26,8 +26,13 @@ function Circles() {
       {/* Content Div: RIGHT */}
         {activeContent && 
         
-      <div className={`contentDivStyle ${activeContent ? 'fullScreenOverlay' : ''}`}>
-          <ActiveContent activeContent={activeContent} setActiveContent={setActiveContent}/>
+      <div 
+
+      onClick={() => setActiveContent(null)}
+          className={`contentDivStyle ${activeContent ? 'fullScreenOverlay' : ''}`}>
+          <ActiveContent activeContent={activeContent} 
+            
+          setActiveContent={setActiveContent}/>
       </div>
         }
     </div>
