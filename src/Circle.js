@@ -55,7 +55,7 @@ export const Circle = ({ position, number, setActiveCircle, activeCircle, setAct
         const circleElement = circleRef.current;
 
         const handleTouchStart = (event) => {
-            event.preventDefault();
+            // event.preventDefault();
             setActiveCircle(number);
             setActiveContent(number);
             setDimContent(true);
@@ -103,8 +103,8 @@ return (
                 'z-10': isActive,
                 'z-1': !isActive,
             })}
-            onMouseEnter={() => !('ontouchstart' in window) && setActiveCircle(number)}
-            onMouseLeave={() => !('ontouchstart' in window) && setActiveCircle(null)}
+            onMouseEnter={() => !('ontouchstart' in window) && setActiveContent(number)}
+            onMouseLeave={() => !('ontouchstart' in window) && setActiveContent(null)}
         >
             <div className="text-white text-3xl font-bold">{number}</div>
         </motion.div>
