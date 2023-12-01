@@ -48,16 +48,27 @@ export const Circle = ({ position, number, setActiveCircle, activeCircle, setAct
         'absolute flex items-center justify-center rounded-full w-60 h-60 border-2 border-white transition-all duration-1000';
     const isActive = activeCircle === number;
 
-    const handleTap = () => {
+    const handleTap = (event) => {
+        event.preventDefault(); // Prevents the mobile browser from interpreting this as a hover event
         setActiveCircle(number);
         setActiveContent(number);
         setDimContent(true);
     };
 
+    const handleMouseEnter = () => {
+        if (window.innerWidth > 1024) { // Only trigger for non-mobile devices
+            setActiveCircle(number);
+            setActiveContent(number);
+            setDimContent(true);
+        }
+    };
+
     const handleMouseLeave = () => {
-        setActiveCircle(null);
-        setActiveContent(null);
-        setDimContent(false)
+        if (window.innerWidth > 1024) { // Only trigger for non-mobile devices
+            setActiveCircle(null);
+            setActiveContent(null);
+            setDimContent(false);
+        }
     };
 
     return (
@@ -68,9 +79,9 @@ export const Circle = ({ position, number, setActiveCircle, activeCircle, setAct
                 'z-10': isActive,
                 'z-1': !isActive,
             })}
-            onMouseEnter={handleTap} // Combined mouse enter and touch for simplicity
+            onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            onTouchStart={handleTap} // Use touch event for mobile devices
+            onTouchStart={handleTap} // Separate touch event handler
             whileHover={{ scale: 1.00 }}
         >
             <div className="text-white text-3xl font-bold">{number}</div>
