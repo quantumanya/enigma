@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import classNames from 'classnames';
 import { motion } from 'framer-motion';
 
@@ -49,6 +49,28 @@ export const Circle = ({ position, number, setActiveCircle, activeCircle, setAct
         'absolute flex items-center justify-center rounded-full w-60 h-60 border-2 border-white transition-all duration-1000';
     const isActive = activeCircle === number;
 
+    const circleRef = useRef(null); // Ref for the DOM element
+
+    useEffect(() => {
+        const circleElement = circleRef.current;
+
+        const handleTouchStart = (event) => {
+            event.preventDefault();
+            setActiveCircle(number);
+            setActiveContent(number);
+            setDimContent(true);
+        };
+
+        // Attach the event listener in a non-passive way
+        circleElement.addEventListener('touchstart', handleTouchStart, { passive: false });
+
+        return () => {
+            // Remove the event listener on cleanup
+            circleElement.removeEventListener('touchstart', handleTouchStart);
+        };
+    }, [number, setActiveCircle, setActiveContent, setDimContent]);
+
+
     const handleTap = (event) => {
         event.preventDefault(); // Prevent default to stop triggering mouse events on touch devices
         setActiveCircle(number);
@@ -72,17 +94,17 @@ export const Circle = ({ position, number, setActiveCircle, activeCircle, setAct
         }
     };
 
-    return (
+return (
         <motion.div
+            ref={circleRef}
             className={classNames(circleClasses, position, {
                 'bg-gray-500 opacity-50': !isActive,
                 'bg-black opacity-100': isActive,
                 'z-10': isActive,
                 'z-1': !isActive,
             })}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            onTouchStart={handleTap}
+            onMouseEnter={() => !('ontouchstart' in window) && setActiveCircle(number)}
+            onMouseLeave={() => !('ontouchstart' in window) && setActiveCircle(null)}
         >
             <div className="text-white text-3xl font-bold">{number}</div>
         </motion.div>
