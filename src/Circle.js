@@ -34,10 +34,12 @@ export const CircleSmall = ({deg=0, x=0, y=45, id, onMouseEnter, onMouseLeave, s
 export const CircleCenter = ({onMouseEnter, onMouseLeave, setShowThreeEye, setShowHiddenLayer }) => {
     const handleMouseEnter = () => {
         onMouseEnter();
+        setActiveContent("Physics");
         setShowThreeEye(true);
     };
     const handleMouseLeave = () => {
         onMouseLeave();
+        setActiveContent(null);
         setShowThreeEye(false);
     };
     return <div className='circleCenter' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />;
@@ -82,7 +84,6 @@ export const Circle = ({ position, number, setActiveCircle, activeCircle, setAct
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onTouchStart={handleTap} // Separate touch event handler
-            whileHover={{ scale: 1.00 }}
         >
             <div className="text-white text-3xl font-bold">{number}</div>
         </motion.div>
