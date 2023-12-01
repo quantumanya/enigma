@@ -310,7 +310,7 @@ function Circles() {
     {/* Content Div: RIGHT */}
       <div className="contentDivStyle">
         {/* Display content based on activeContent state */}
-        {activeContent && <ActiveContent currentState={activeContent} />}
+        {activeContent && <ActiveContent activeContent={activeContent} />}
       </div>
 
     

@@ -7,6 +7,11 @@ function Circles() {
   const [dimContent, setDimContent] = useState(false);
   const [activeContent, setActiveContent] = useState(null);
 
+
+    console.log("active Content")
+    console.log(activeContent)
+
+
   return (
     <div className="p-2 flex items-center justify-center bg-black relative">
       {/* Content Div: LEFT */}
@@ -22,7 +27,7 @@ function Circles() {
         {activeContent && 
         
       <div className={`contentDivStyle ${activeContent ? 'fullScreenOverlay' : ''}`}>
-          <ActiveContent currentState={activeContent} setActiveContent={setActiveContent}/>
+          <ActiveContent activeContent={activeContent} setActiveContent={setActiveContent}/>
       </div>
         }
     </div>

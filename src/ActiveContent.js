@@ -36,22 +36,23 @@ const transitionStyle = {
     // border: 'solid',
 };
 
-const ActiveContent = ({ currentState, setActiveContent }) => {
+const ActiveContent = ({ activeContent, setActiveContent }) => {
     const [visible, setVisible] = useState(true);
-    const [displayContent, setDisplayContent] = useState(currentState);
+    const [displayContent, setDisplayContent] = useState(activeContent);
     const [style, setStyle] = useState({ ...transitionStyle });
 
     useEffect(() => {
         setStyle({ ...transitionStyle, opacity: 0 });
 
         const timeoutId = setTimeout(() => {
-            setDisplayContent(currentState);
+            setDisplayContent(activeContent);
             setStyle({ ...transitionStyle, opacity: 1 });
         }, 300);
 
         const handleOutsideTap = (e) => {
             if (!e.target.closest('.active-content')) {
                 setVisible(false);
+                console.log("tap outside")
                 setActiveContent(null);
             }
         };
@@ -62,7 +63,7 @@ const ActiveContent = ({ currentState, setActiveContent }) => {
             clearTimeout(timeoutId);
             window.removeEventListener('touchstart', handleOutsideTap);
         };
-    }, [currentState, setActiveContent]);
+    }, [activeContent]);
 
     const currentContent = contentDictionary[displayContent];
 

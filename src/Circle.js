@@ -55,9 +55,9 @@ export const Circle = ({ position, number, setActiveCircle, activeCircle, setAct
         const circleElement = circleRef.current;
 
         const handleTouchStart = (event) => {
-            // event.preventDefault();
-            setActiveCircle(number);
+            event.preventDefault();
             setActiveContent(number);
+            setActiveCircle(number);
             setDimContent(true);
         };
 
@@ -71,12 +71,12 @@ export const Circle = ({ position, number, setActiveCircle, activeCircle, setAct
     }, [number, setActiveCircle, setActiveContent, setDimContent]);
 
 
-    const handleTap = (event) => {
-        event.preventDefault(); // Prevent default to stop triggering mouse events on touch devices
-        setActiveCircle(number);
-        setActiveContent(number);
-        setDimContent(true);
-    };
+    // const handleTap = (event) => {
+    //     event.preventDefault(); // Prevent default to stop triggering mouse events on touch devices
+    //     setActiveCircle(number);
+    //     setActiveContent(number);
+    //     setDimContent(true);
+    // };
 
     const handleMouseEnter = () => {
         if (!('ontouchstart' in window)) { // Check if it's not a touch device
@@ -103,8 +103,8 @@ return (
                 'z-10': isActive,
                 'z-1': !isActive,
             })}
-            onMouseEnter={() => !('ontouchstart' in window) && setActiveContent(number)}
-            onMouseLeave={() => !('ontouchstart' in window) && setActiveContent(null)}
+            onMouseEnter={() => !('ontouchstart' in window) && handleMouseEnter(number)}
+            onMouseLeave={() => !('ontouchstart' in window) && handleMouseLeave(null)}
         >
             <div className="text-white text-3xl font-bold">{number}</div>
         </motion.div>
