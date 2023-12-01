@@ -36,6 +36,9 @@ function Vienn({setDimContent, setActiveContent}) {
         activeCircle={activeCircle}
         setActiveContent={setActiveContent}
         setDimContent={setDimContent}
+        onMouseEnter={() => setActiveContent("Neuroscience")} 
+        onMouseLeave={() => setActiveContent(null)} 
+        setShowThreeEye={setShowThreeEye}
         />
       <Circle
         position="bottom-0 left-0"
@@ -44,6 +47,9 @@ function Vienn({setDimContent, setActiveContent}) {
         activeCircle={activeCircle}
         setDimContent={setDimContent}
         setActiveContent={setActiveContent}
+        onMouseEnter={() => setShowHiddenLayer(true)} 
+        onMouseLeave={() => setShowHiddenLayer(false)} 
+        setShowThreeEye={setShowThreeEye}
         />
       <Circle
         position="bottom-0 right-0"
@@ -52,6 +58,9 @@ function Vienn({setDimContent, setActiveContent}) {
         setActiveCircle={setActiveCircle}
         activeCircle={activeCircle}
         setActiveContent={setActiveContent}
+        onMouseEnter={() => setShowHiddenLayer(true)} 
+        onMouseLeave={() => setShowHiddenLayer(false)} 
+        setShowThreeEye={setShowThreeEye}
       />
 
       {/* SET 2 */}
@@ -129,7 +138,6 @@ function Vienn({setDimContent, setActiveContent}) {
 
       {/* z-index: 40 */}
       <CircleCenter 
-        setShowHiddenLaye={setShowHiddenLayer}
         onMouseEnter={() => setShowHiddenLayer(true)} 
         onMouseLeave={() => setShowHiddenLayer(false)} 
         setShowThreeEye={setShowThreeEye}

@@ -31,7 +31,7 @@ export const CircleSmall = ({deg=0, x=0, y=45, id, onMouseEnter, onMouseLeave, s
     return <div style={style} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />;
 };
 
-export const CircleCenter = ({onMouseEnter, onMouseLeave, setShowThreeEye, setShowHiddenLayer }) => {
+export const CircleCenter = ({onMouseEnter, onMouseLeave, setShowThreeEye }) => {
     const handleMouseEnter = () => {
         onMouseEnter();
         setShowThreeEye(true);
@@ -43,18 +43,20 @@ export const CircleCenter = ({onMouseEnter, onMouseLeave, setShowThreeEye, setSh
     return <div className='circleCenter' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />;
 };
 
-export const Circle = ({ position, number, setActiveCircle, activeCircle, setActiveContent, setDimContent}) => {
+export const Circle = ({ position, number, onMouseEnter, onMouseLeave, setShowThreeEye, setActiveCircle, activeCircle, setActiveContent, setDimContent}) => {
     const circleClasses =
         'absolute flex items-center justify-center rounded-full w-60 h-60 border-2 border-white transition-all duration-1000';
     const isActive = activeCircle === number;
 
     const handleMouseEnter = () => {
         onMouseEnter();
-        setShowThreeEye(true);
+        // setShowThreeEye(true);
+        setDimContent(true);
     };
     const handleMouseLeave = () => {
         onMouseLeave();
-        setShowThreeEye(false);
+        // setShowThreeEye(false);
+        setDimContent(null);
     };
 
     // const handleTap = (event) => {
