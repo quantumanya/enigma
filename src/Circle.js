@@ -50,13 +50,11 @@ export const Circle = ({ position, number, onMouseEnter, onMouseLeave, setShowTh
 
     const handleMouseEnter = () => {
         onMouseEnter();
-        // setShowThreeEye(true);
-        setDimContent(true);
+        setShowThreeEye(true);
     };
     const handleMouseLeave = () => {
         onMouseLeave();
-        // setShowThreeEye(false);
-        setDimContent(null);
+        setShowThreeEye(false);
     };
 
     // const handleTap = (event) => {

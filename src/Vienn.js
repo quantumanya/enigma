@@ -36,8 +36,8 @@ function Vienn({setDimContent, setActiveContent}) {
         activeCircle={activeCircle}
         setActiveContent={setActiveContent}
         setDimContent={setDimContent}
-        onMouseEnter={() => setActiveContent("Neuroscience")} 
-        onMouseLeave={() => setActiveContent(null)} 
+        onMouseEnter={() => setShowHiddenLayer(true)} 
+        onMouseLeave={() => setShowHiddenLayer(false)}
         setShowThreeEye={setShowThreeEye}
         />
       <Circle
