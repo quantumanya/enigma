@@ -49,29 +49,29 @@ const ActiveContent = ({ activeContent, setActiveContent }) => {
     const [displayContent, setDisplayContent] = useState(activeContent);
     const [style, setStyle] = useState({ ...transitionStyle });
 
-    // useEffect(() => {
-    //     setStyle({ ...transitionStyle, opacity: 0 });
+    useEffect(() => {
+        setStyle({ ...transitionStyle, opacity: 0 });
 
-    //     const timeoutId = setTimeout(() => {
-    //         setDisplayContent(activeContent);
-    //         setStyle({ ...transitionStyle, opacity: 1 });
-    //     }, 300);
+        const timeoutId = setTimeout(() => {
+            setDisplayContent(activeContent);
+            setStyle({ ...transitionStyle, opacity: 1 });
+        }, 300);
 
-    //     const handleOutsideTap = (e) => {
-    //         if (!e.target.closest('.active-content')) {
-    //             setVisible(false);
-    //             console.log("tap outside")
-    //             // setActiveContent(null);
-    //         }
-    //     };
+        // const handleOutsideTap = (e) => {
+        //     if (!e.target.closest('.active-content')) {
+        //         setVisible(false);
+        //         console.log("tap outside")
+        //         // setActiveContent(null);
+        //     }
+        // };
 
-    //     window.addEventListener('touchstart', handleOutsideTap);
+        // window.addEventListener('touchstart', handleOutsideTap);
 
-    //     return () => {
-    //         clearTimeout(timeoutId);
-    //         window.removeEventListener('touchstart', handleOutsideTap);
-    //     };
-    // }, [activeContent]);
+        return () => {
+            clearTimeout(timeoutId);
+            // window.removeEventListener('touchstart', handleOutsideTap);
+        };
+    }, [activeContent]);
 
     const currentContent = contentDictionary[activeContent];
 
