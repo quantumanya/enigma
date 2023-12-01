@@ -3,9 +3,9 @@ import Circle from './Circle';
 import Eye from './Eye';
 import ThreeEye from './ThreeEye';
 import {CircleSmall, CircleCenter} from './Circle';
-function Vienn({setDimContent, setActiveContent}) {
+function Vienn({setActiveCircle, activeCircle, setDimContent, setActiveContent}) {
 
-    const [activeCircle, setActiveCircle] = useState(null);
+    // const [activeCircle, setActiveCircle] = useState(null);
     const [showEyeSet1, setShowEyeSet1] = useState(false); // State for Eye of set 1
     const [showEyeSet2, setShowEyeSet2] = useState(false); // State for Eye of set 2
     const [showEyeSet3, setShowEyeSet3] = useState(false); // State for Eye of set 3

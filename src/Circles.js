@@ -6,11 +6,16 @@ import Vienn from './Vienn';
 function Circles() {
   const [dimContent, setDimContent] = useState(false);
   const [activeContent, setActiveContent] = useState(null);
-
+    const [activeCircle, setActiveCircle] = useState(null);
 
     console.log("active Content")
     console.log(activeContent)
 
+  const deactivate = () => {
+    setActiveContent(null)
+    setActiveCircle(null)
+    setDimContent(false)
+  }
 
   return (
     <div className="p-2 flex items-center justify-center bg-black relative">
@@ -20,7 +25,7 @@ function Circles() {
       </div>
 
         <div className="viennWrapper">
-           <Vienn setDimContent={setDimContent} setActiveContent={setActiveContent}/>
+           <Vienn activeCircle={activeCircle} setActiveCircle={setActiveCircle} setDimContent={setDimContent} setActiveContent={setActiveContent}/>
         </div>
         
       {/* Content Div: RIGHT */}
@@ -28,7 +33,7 @@ function Circles() {
         
       <div 
 
-      onClick={() => setActiveContent(null)}
+      onClick={() => deactivate()}
           className={`contentDivStyle ${activeContent ? 'fullScreenOverlay' : ''}`}>
           <ActiveContent activeContent={activeContent} 
             
