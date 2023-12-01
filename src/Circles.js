@@ -7,6 +7,10 @@ function Circles() {
   const [dimContent, setDimContent] = useState(false);
   const [activeContent, setActiveContent] = useState(null);
     const [activeCircle, setActiveCircle] = useState(null);
+    const [showEyeSet1, setShowEyeSet1] = useState(false); // State for Eye of set 1
+    const [showEyeSet2, setShowEyeSet2] = useState(false); // State for Eye of set 2
+    const [showEyeSet3, setShowEyeSet3] = useState(false); // State for Eye of set 3
+    
 
     console.log("active Content")
     console.log(activeContent)
@@ -15,6 +19,9 @@ function Circles() {
     setActiveContent(null)
     setActiveCircle(null)
     setDimContent(false)
+    setShowEyeSet1(false)
+    setShowEyeSet2(false)
+    setShowEyeSet3(false)
   }
 
   return (
@@ -25,7 +32,14 @@ function Circles() {
       </div>
 
         <div className="viennWrapper">
-           <Vienn activeCircle={activeCircle} setActiveCircle={setActiveCircle} setDimContent={setDimContent} setActiveContent={setActiveContent}/>
+           <Vienn 
+            setShowEyeSet1={setShowEyeSet1} 
+            setShowEyeSet2={setShowEyeSet2} 
+            setShowEyeSet3={setShowEyeSet3} 
+            showEyeSet1={showEyeSet1}
+            showEyeSet2={showEyeSet2}
+            showEyeSet3={showEyeSet3}
+            activeCircle={activeCircle} setActiveCircle={setActiveCircle} setDimContent={setDimContent} setActiveContent={setActiveContent}/>
         </div>
         
       {/* Content Div: RIGHT */}

@@ -3,12 +3,12 @@ import Circle from './Circle';
 import Eye from './Eye';
 import ThreeEye from './ThreeEye';
 import {CircleSmall, CircleCenter} from './Circle';
-function Vienn({setActiveCircle, activeCircle, setDimContent, setActiveContent}) {
+function Vienn({setShowEyeSet1, setShowEyeSet2, setShowEyeSet3, showEyeSet1, showEyeSet2, showEyeSet3, setActiveCircle, activeCircle, setDimContent, setActiveContent}) {
 
     // const [activeCircle, setActiveCircle] = useState(null);
-    const [showEyeSet1, setShowEyeSet1] = useState(false); // State for Eye of set 1
-    const [showEyeSet2, setShowEyeSet2] = useState(false); // State for Eye of set 2
-    const [showEyeSet3, setShowEyeSet3] = useState(false); // State for Eye of set 3
+    // const [showEyeSet1, setShowEyeSet1] = useState(false); // State for Eye of set 1
+    // const [showEyeSet2, setShowEyeSet2] = useState(false); // State for Eye of set 2
+    // const [showEyeSet3, setShowEyeSet3] = useState(false); // State for Eye of set 3
     const [showThreeEye, setShowThreeEye] = useState(false); // State for Eye of set 3
     const [showHiddenLayer, setShowHiddenLayer] = useState(false); // State for the hidden layer
 
@@ -60,8 +60,9 @@ function Vienn({setActiveCircle, activeCircle, setDimContent, setActiveContent})
         deg={0}
 
         id={"ap"}
-        onMouseEnter={() => setShowEyeSet2(true)} 
-        onMouseLeave={() => setShowEyeSet2(false)} 
+        // onMouseEnter={() => setShowEyeSet2(true)} 
+        // onMouseLeave={() => setShowEyeSet2(false)} 
+        setShowEyeSet={setShowEyeSet2}
         setActiveContent={setActiveContent}
         setDimContent={setDimContent}
       />
@@ -79,8 +80,9 @@ function Vienn({setActiveCircle, activeCircle, setDimContent, setActiveContent})
         deg={65}
 
         id={"pn"}
-        onMouseEnter={() => setShowEyeSet1(true)} 
-        onMouseLeave={() => setShowEyeSet1(false)} 
+        // onMouseEnter={() => setShowEyeSet1(true)} 
+        // onMouseLeave={() => setShowEyeSet1(false)} 
+        setShowEyeSet={setShowEyeSet1}
         setActiveContent={setActiveContent}
         setDimContent={setDimContent}
       />
@@ -97,8 +99,9 @@ function Vienn({setActiveCircle, activeCircle, setDimContent, setActiveContent})
         y={28}
         deg={-65}
         id={"an"}
-        onMouseEnter={() => setShowEyeSet3(true)} 
-        onMouseLeave={() => setShowEyeSet3(false)} 
+        setShowEyeSet={setShowEyeSet3}
+        // onMouseEnter={() => setShowEyeSet3(true)} 
+        // onMouseLeave={() => setShowEyeSet3(false)} 
         setActiveContent={setActiveContent}
         setDimContent={setDimContent}
       />

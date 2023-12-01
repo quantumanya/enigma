@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import classNames from 'classnames';
 import { motion } from 'framer-motion';
 
-export const CircleSmall = ({deg=0, x=0, y=45, id, onMouseEnter, onMouseLeave, setActiveContent, setDimContent }) => {
+export const CircleSmall = ({deg=0, x=0, y=45, id, setShowEyeSet, onMouseEnter, onMouseLeave, setActiveContent, setDimContent }) => {
     const style = {
         width: '90px',
         height: '170px',
@@ -16,19 +16,48 @@ export const CircleSmall = ({deg=0, x=0, y=45, id, onMouseEnter, onMouseLeave, s
         opacity: '0',
     };
 
-    const handleMouseEnter = () => {
-        setActiveContent(id);
-        onMouseEnter();
-        setDimContent(true);
-    };
-    
-    const handleMouseLeave = () => {
-        onMouseLeave();
-        setDimContent(false);
-        setActiveContent(null);
-    };
+    const circleRef = useRef(null); // Ref for the DOM element
+        useEffect(() => {
+            const circleElement = circleRef.current;
+            const handleTouchStart = (event) => {
+                event.preventDefault();
+                setActiveContent(id);
+                setShowEyeSet(true);
+                setDimContent(true);
+            };
 
-    return <div style={style} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />;
+            // Attach the event listener in a non-passive way
+            circleElement.addEventListener('touchstart', handleTouchStart, { passive: false });
+            return () => {
+                // Remove the event listener on cleanup
+                circleElement.removeEventListener('touchstart', handleTouchStart);
+            };
+        }, [id, setActiveContent, setDimContent]);
+
+
+        const handleMouseEnter = () => {
+            if (!('ontouchstart' in window)) { // Check if it's not a touch device
+                setShowEyeSet(true)
+                setActiveContent(id);
+                setDimContent(true);
+            }
+        };
+
+        const handleMouseLeave = () => {
+            if (!('ontouchstart' in window)) { // Check if it's not a touch device
+                setShowEyeSet(false)
+                setActiveContent(null);
+                setDimContent(false);
+            }
+        };
+
+    return <div style={style} 
+        ref={circleRef}
+            onMouseEnter={() => !('ontouchstart' in window) && handleMouseEnter(id)}
+            onMouseLeave={() => !('ontouchstart' in window) && handleMouseLeave(null)}
+      // onMouseEnter={handleMouseEnter} 
+      // onMouseLeave={handleMouseLeave} 
+      />;
 };
 
 export const CircleCenter = ({onMouseEnter, onMouseLeave, setShowThreeEye }) => {
@@ -50,10 +79,8 @@ export const Circle = ({ position, number, setActiveCircle, activeCircle, setAct
     const isActive = activeCircle === number;
 
     const circleRef = useRef(null); // Ref for the DOM element
-
     useEffect(() => {
         const circleElement = circleRef.current;
-
         const handleTouchStart = (event) => {
             event.preventDefault();
             setActiveContent(number);
@@ -63,20 +90,12 @@ export const Circle = ({ position, number, setActiveCircle, activeCircle, setAct
 
         // Attach the event listener in a non-passive way
         circleElement.addEventListener('touchstart', handleTouchStart, { passive: false });
-
         return () => {
             // Remove the event listener on cleanup
             circleElement.removeEventListener('touchstart', handleTouchStart);
         };
     }, [number, setActiveCircle, setActiveContent, setDimContent]);
 
-
-    // const handleTap = (event) => {
-    //     event.preventDefault(); // Prevent default to stop triggering mouse events on touch devices
-    //     setActiveCircle(number);
-    //     setActiveContent(number);
-    //     setDimContent(true);
-    // };
 
     const handleMouseEnter = () => {
         if (!('ontouchstart' in window)) { // Check if it's not a touch device
@@ -94,15 +113,15 @@ export const Circle = ({ position, number, setActiveCircle, activeCircle, setAct
         }
     };
 
-return (
+    return (
         <motion.div
-            ref={circleRef}
-            className={classNames(circleClasses, position, {
-                'bg-gray-500 opacity-50': !isActive,
-                'bg-black opacity-100': isActive,
-                'z-10': isActive,
-                'z-1': !isActive,
+        className={classNames(circleClasses, position, {
+              'bg-gray-500 opacity-50': !isActive,
+              'bg-black opacity-100': isActive,
+              'z-10': isActive,
+              'z-1': !isActive,
             })}
+            ref={circleRef}
             onMouseEnter={() => !('ontouchstart' in window) && handleMouseEnter(number)}
             onMouseLeave={() => !('ontouchstart' in window) && handleMouseLeave(null)}
         >
