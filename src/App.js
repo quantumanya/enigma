@@ -14,10 +14,11 @@ const App = () => {
             fontWeight: '400', 
             color: '#bdbdbd', 
             fontSize: '14pt',
-            paddingTop: '14pt',
+            paddingTop: '16pt',
+            paddingLeft: '16pt',
             }}>
 
-           Final Enigma 2
+           FinalEnigma: podcast
 
           </div>
         </div>

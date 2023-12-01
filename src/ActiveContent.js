@@ -27,6 +27,14 @@ const contentDictionary = {
         header: 'AI X Neuroscience',
         body: 'This is the body text for Content 2.'
     },
+    final: {
+        header: 'Final Enigma',
+        body: 'This is the body text for Content 2.'
+    },
+    podcast: {
+        header: 'FinalEnigma: Podcast',
+        body: 'In early 2024 I plan on launching a podcast series which will be exploring various scientific "enigmas" and mysteries on the intersection of three fields of research: <br /> Physics x AI x Neuroscience <br /> with the ultimate goal of exploring and fostering the quest of Human and (petentially) machine (i.e. AGI) Consciousness.'
+    },
     // Add more content as needed
 };
 

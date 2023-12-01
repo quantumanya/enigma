@@ -9,6 +9,7 @@
     box-sizing: border-box;
     color: white;
     transition: opacity 0.5s ease-in-out;
+    z-index: 24;
 }
 
 /* New class for full-screen overlay
@@ -43,7 +44,7 @@
         height: 100%;
         min-width: 0; /* Reset min-width */
         overflow: auto;
-        z-index: 100;
+        z-index: 24;
         opacity: 0.9;
         background-color: black;
     }
@@ -110,7 +111,7 @@
     width: 100vw;
     height: 100vh;
     background-color: black;
-    z-index: 25;
+    z-index: 23;
     transition: opacity 0.5s ease-in-out;
     /* opacity and pointer-events will be set inline due to their dynamic nature */
 }

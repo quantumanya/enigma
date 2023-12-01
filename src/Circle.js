@@ -60,13 +60,15 @@ export const CircleSmall = ({deg=0, x=0, y=45, id, setShowEyeSet, onMouseEnter, 
       />;
 };
 
-export const CircleCenter = ({onMouseEnter, onMouseLeave, setShowThreeEye }) => {
+export const CircleCenter = ({setActiveContent, onMouseEnter, onMouseLeave, setShowThreeEye }) => {
     const handleMouseEnter = () => {
         onMouseEnter();
+        setActiveContent("final");
         setShowThreeEye(true);
     };
     const handleMouseLeave = () => {
         onMouseLeave();
+        setActiveContent(null)
         setShowThreeEye(false);
     };
     return <div className='circleCenter' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />;

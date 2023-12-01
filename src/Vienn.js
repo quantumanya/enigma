@@ -132,6 +132,7 @@ function Vienn({setShowEyeSet1, setShowEyeSet2, setShowEyeSet3, showEyeSet1, sho
         onMouseEnter={() => setShowHiddenLayer(true)} 
         onMouseLeave={() => setShowHiddenLayer(false)} 
         setShowThreeEye={setShowThreeEye}
+        setActiveContent={setActiveContent}
       />
 
       {/* Hidden Layer */}
