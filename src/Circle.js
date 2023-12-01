@@ -49,7 +49,7 @@ export const Circle = ({ position, number, setActiveCircle, activeCircle, setAct
     const isActive = activeCircle === number;
 
     const handleTap = (event) => {
-        event.preventDefault(); // Prevents the mobile browser from interpreting this as a hover event
+        // event.preventDefault(); // Prevents the mobile browser from interpreting this as a hover event
         setActiveCircle(number);
         setActiveContent(number);
         setDimContent(true);
