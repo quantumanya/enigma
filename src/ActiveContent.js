@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
+import Signup from './Signup';
+
 // Define a dictionary with various texts for header and body
 const contentDictionary = {
     Neuroscience: {
@@ -70,6 +72,7 @@ const ActiveContent = ({ activeContent, setActiveContent }) => {
                         {currentContent.header}
                     </h1>
                     <p style={{ fontFamily: 'monospace' }} dangerouslySetInnerHTML={{ __html: currentContent.body }}></p>
+                    {activeContent=='podcast' && <Signup />}
                 </div>
             ) : null}
         </>
