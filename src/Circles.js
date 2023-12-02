@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ActiveContent from './ActiveContent';
 import './Styles.css'; // Import the CSS file here
 import Vienn from './Vienn';
+import Signup from './Signup';
 
 function Circles() {
   const [dimContent, setDimContent] = useState(false);
@@ -49,8 +50,12 @@ function Circles() {
   return (
     <div className="p-2 flex items-center justify-center bg-black relative">
       {/* Content Div: LEFT */}
+
       <div className='leftContentDivStyle' style={{ opacity: dimContent ? 0.3 : 1 }}>
-        <div>LEFT text </div>  
+        
+        
+<Signup />
+
       </div>
 
         <div className="viennWrapper">
@@ -65,15 +70,49 @@ function Circles() {
         </div>
         
       {/* Content Div: RIGHT */}
+
+
+      {!dimContent && 
+        <div className='contentDivStyle'>
+
+          <h1>
+            <strong style={{color: 'white'}}>What?</strong>
+          </h1>
+          A podcast exploring the scientific intersections between Ai + Neuroscience + Physics with the ultimate goal of probing the enigma of <strong style={{color: 'white'}}> Human and Machine/AI Consciousness.</strong> 
+          <br />
+          <br />
+          <h1>
+            <strong style={{color: 'white'}}>Why?</strong>
+          </h1>
+          I strongly believe that there is an urgent need in an acceleration of a concerted scientific effort in understanding an detection of Concsiousness, which must bear results before the impending accent of AGI. 
+          <br /> My conviction is for this to be a critical prerequisite to AGI safety.
+          <br />
+          <br />
+          <h1>
+            <strong style={{color: 'white'}}>When?</strong>
+          </h1>
+          Early 2024 
+          <br />
+          <br />
+          <h1>
+            <strong style={{color: 'white'}}>Who?</strong>
+          </h1>
+          Please feel free to contact me on <a href="https://www.linkedin.com/in/anyapetrova/" style={{color:'white'}}>LinkedIn</a> with any questions and *especially* if you know someone you think I should interview!
+          </div>  
+
+      }
+              
+
         {activeContent && 
         
       <div 
 
       onClick={() => deactivate()}
           className={`contentDivStyle ${activeContent ? 'fullScreenOverlay' : ''}`}>
-          <ActiveContent activeContent={activeContent} 
-            
-          setActiveContent={setActiveContent}/>
+         
+          
+         <ActiveContent activeContent={activeContent} setActiveContent={setActiveContent}/>
+
       </div>
         }
     </div>

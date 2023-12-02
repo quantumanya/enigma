@@ -41,7 +41,6 @@ const contentDictionary = {
 const transitionStyle = {
     transition: 'opacity 0.3s ease-in-out',
     opacity: 1,
-    // border: 'solid',
 };
 
 const ActiveContent = ({ activeContent, setActiveContent }) => {
@@ -56,20 +55,8 @@ const ActiveContent = ({ activeContent, setActiveContent }) => {
             setDisplayContent(activeContent);
             setStyle({ ...transitionStyle, opacity: 1 });
         }, 300);
-
-        // const handleOutsideTap = (e) => {
-        //     if (!e.target.closest('.active-content')) {
-        //         setVisible(false);
-        //         console.log("tap outside")
-        //         // setActiveContent(null);
-        //     }
-        // };
-
-        // window.addEventListener('touchstart', handleOutsideTap);
-
         return () => {
             clearTimeout(timeoutId);
-            // window.removeEventListener('touchstart', handleOutsideTap);
         };
     }, [activeContent]);
 
@@ -82,8 +69,7 @@ const ActiveContent = ({ activeContent, setActiveContent }) => {
                     <h1 style={{ fontSize: '24pt', fontFamily: 'monospace' }}>
                         {currentContent.header}
                     </h1>
-                    <p style={{ fontFamily: 'monospace' }} dangerouslySetInnerHTML={{ __html: currentContent.body }}>
-</p>
+                    <p style={{ fontFamily: 'monospace' }} dangerouslySetInnerHTML={{ __html: currentContent.body }}></p>
                 </div>
             ) : null}
         </>
