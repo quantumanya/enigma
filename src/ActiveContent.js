@@ -23,7 +23,7 @@ const contentDictionary = {
     },
     pn: {
         header: 'Physics X Neuroscience',
-        body: "<ul><li><strong style='color:white;'>Quantum Brain:</strong> <span style='color:gray;'>Is there a role for quantum mechanics in brain function, and how might quantum physics influence cognitive processes and consciousness?</span></li><br><li><strong style='color:white;'>Physical Basis of Consciousness:</strong> <span style='color:gray;'>What are the physical processes underlying consciousness, and can physics provide insights into this complex phenomenon?</span></li><br><li><strong style='color:white;'>Neural Information Processing and Quantum Computing:</strong> <span style='color:gray;'>How could quantum computing impact our understanding and simulation of neural information processing in the brain?</span></li></ul>"
+        body: "<br /><ul><li><strong style='color:white;'>Quantum Brain:</strong> <span style='color:gray;'>Is there a role for quantum mechanics in brain function, and how might quantum physics influence cognitive processes and consciousness?</span></li><br><li><strong style='color:white;'>Physical Basis of Consciousness:</strong> <span style='color:gray;'>What are the physical processes underlying consciousness, and can physics provide insights into this complex phenomenon?</span></li><br><li><strong style='color:white;'>Neural Information Processing and Quantum Computing:</strong> <span style='color:gray;'>How could quantum computing impact our understanding and simulation of neural information processing in the brain?</span></li></ul>"
     },
     an: {
         header: 'AI X Neuroscience',
@@ -31,7 +31,7 @@ const contentDictionary = {
     },
     final: {
         header: 'Final Enigma',
-        body: 'This is the body text for Content 2.'
+        body: "<br />It's possible that the only path to a scientific understanding of Consciousness goes through the intersection (and collaboration) of all three fields of research: <span style='color: white;'>Physics + AI + Neuroscience. </span> <br /><br /> Delving deeper into the research that fuses all these scientific realms on the quest for unlocking the nature of Consciousness is the key objective of this podcast and the final enigma of all science. "
     },
     podcast: {
         header: 'FinalEnigma: Podcast',
@@ -72,7 +72,7 @@ const ActiveContent = ({ activeContent, setActiveContent }) => {
                         {currentContent.header}
                     </h1>
                     <p style={{ fontFamily: 'monospace' }} dangerouslySetInnerHTML={{ __html: currentContent.body }}></p>
-                    {activeContent=='podcast' && <Signup />}
+                    {/* {activeContent=='podcast' && <Signup />} */}
                 </div>
             ) : null}
         </>
