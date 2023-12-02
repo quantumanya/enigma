@@ -6,8 +6,8 @@ import Signup from './Signup';
 
 function Circles() {
   const [dimContent, setDimContent] = useState(false);
-  const [activeContent, setActiveContent] = useState(null);
-  // const [activeContent, setActiveContent] = useState(window.innerWidth <= 768 ? 'podcast' : null);
+  // const [activeContent, setActiveContent] = useState(null);
+  const [activeContent, setActiveContent] = useState(window.innerWidth <= 768 ? 'podcast' : null);
     const [activeCircle, setActiveCircle] = useState(null);
     const [showEyeSet1, setShowEyeSet1] = useState(false); // State for Eye of set 1
     const [showEyeSet2, setShowEyeSet2] = useState(false); // State for Eye of set 2
