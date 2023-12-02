@@ -33,7 +33,7 @@ const contentDictionary = {
     },
     podcast: {
         header: 'FinalEnigma: Podcast',
-        body: 'In early 2024 I plan on launching a podcast series which will be exploring various scientific "enigmas" and mysteries on the intersection of three fields of research: <br /> Physics x AI x Neuroscience <br /> with the ultimate goal of exploring and fostering the quest of Human and (petentially) machine (i.e. AGI) Consciousness.'
+        body: '<br /><strong style="color: white;">What?</strong><br />A podcast exploring the scientific intersections of AI, Neuroscience, and Physics, with the ultimate goal of probing the enigma of Human and AI/Machine Consciousness.<br /><br /><strong style="color: white;">Why?</strong> <br />There is an urgent need for a concerted scientific effort in understanding Consciousness, as it could play a critical role in AGI safety.<br /><br /><strong style="color: white;">When?</strong> <br />Early 2024<br /><br /><strong style="color: white;">Who?</strong> <br />Please feel free to contact me on <a href="https://www.linkedin.com/in/anyapetrova/" style="color: white;">LinkedIn</a> with any questions, and especially if you know someone you think I should interview!'
     },
     // Add more content as needed
 };
