@@ -35,7 +35,7 @@ const contentDictionary = {
     },
     podcast: {
         header: 'FinalEnigma: Podcast',
-        body: '<br /><br /><strong style="color: white;">What?</strong><br />A podcast exploring the scientific intersections of AI, Neuroscience, and Physics, with the ultimate goal of probing the enigma of Human and AI/Machine Consciousness.<br /><br /><strong style="color: white;">Why?</strong> <br />There is an urgent need for a concerted scientific effort in understanding Consciousness, as it could play a critical role in AGI safety.<br /><br /><strong style="color: white;">When?</strong> <br />Early 2024<br /><br />'
+        body: '<br /><br /><strong style="color: white;">What?</strong><br />A podcast exploring the scientific intersections of AI, Neuroscience, and Physics, with the ultimate goal of probing the enigma of Human and AI/Machine Consciousness.<br /><br /><strong style="color: white;">Why?</strong> <br />There is an urgent need for a concerted scientific effort in understanding Consciousness, as it could play a critical role in AGI safety.<br /><br /><strong style="color: white;">When?</strong> <br />Early 2024<br /><br /><br /><br /> <strong style="color: white;"> * PLEASE * </strong> when back home view this site on your laptop/computer for a pleasant interactive experience! It really sucks on the phone :)'
     },
     // Add more content as needed
 };
