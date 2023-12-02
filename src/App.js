@@ -8,7 +8,7 @@ const App = () => {
       <div style={{ textAlign: 'center' }}>
           <div style={{ 
             display: 'inline-block', 
-            width: '860pt',
+            width: '900pt',
             textAlign: 'left',
             fontFamily: 'monospace', 
             fontWeight: '400', 
@@ -18,7 +18,8 @@ const App = () => {
             paddingLeft: '16pt',
             }}>
 
-           FinalEnigma: podcast
+           Final Enigma
+           {/* <span style={{}}>A podcast on a Scientific Quest for Uncerstanding Consciousness</span> */}
 
           </div>
         </div>
@@ -26,7 +27,7 @@ const App = () => {
       <div>
         <div className="p-2 flex items-center justify-center bg-black relative"
           style={{
-            height: '500pt'
+            height: '450pt'
           }}
           >
           <Circles/>

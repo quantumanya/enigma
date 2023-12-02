@@ -71,6 +71,7 @@ function Vienn({setShowEyeSet1, setShowEyeSet2, setShowEyeSet3, showEyeSet1, sho
         circle2={{ x: 216 + 51, y: 264 }} 
         showEye={showEyeSet2}
         idPrefix="AP"
+        
       />
       
     {/* SET 1 */}
@@ -133,6 +134,7 @@ function Vienn({setShowEyeSet1, setShowEyeSet2, setShowEyeSet3, showEyeSet1, sho
         onMouseLeave={() => setShowHiddenLayer(false)} 
         setShowThreeEye={setShowThreeEye}
         setActiveContent={setActiveContent}
+        setDimContent={setDimContent}
       />
 
       {/* Hidden Layer */}

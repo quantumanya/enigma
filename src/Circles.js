@@ -11,8 +11,7 @@ function Circles() {
     const [showEyeSet1, setShowEyeSet1] = useState(false); // State for Eye of set 1
     const [showEyeSet2, setShowEyeSet2] = useState(false); // State for Eye of set 2
     const [showEyeSet3, setShowEyeSet3] = useState(false); // State for Eye of set 3
-    
-
+  
     console.log("active Content")
     console.log(activeContent)
 
@@ -48,13 +47,20 @@ function Circles() {
   // }, []);
 
   return (
+
+    <>
     <div className="p-2 flex items-center justify-center bg-black relative">
       {/* Content Div: LEFT */}
 
       <div className='leftContentDivStyle' style={{ opacity: dimContent ? 0.3 : 1 }}>
         
-        
-<Signup />
+        <h1>
+            <strong style={{color: 'white'}}>Exploring the Quest for Understanding Consciousness</strong>
+          </h1>
+          <br />The rise of AI technology has sparked debate about the potential consciousness of future AI agents, raising moral, legal, philosophical, and religious questions. Currently, science lacks the means to determine if AGI could possess consciousness. This podcast aims to investigate scientific collaboration at the intersection of three research areas, believing that here lies the key to unraveling the ultimate enigma: the nature of consciousness.
+           <Signup />
+          
+     
 
       </div>
 
@@ -75,47 +81,47 @@ function Circles() {
       {!dimContent && 
         <div className='contentDivStyle'>
 
-          <h1>
-            <strong style={{color: 'white'}}>What?</strong>
-          </h1>
-          A podcast exploring the scientific intersections between Ai + Neuroscience + Physics with the ultimate goal of probing the enigma of <strong style={{color: 'white'}}> Human and Machine/AI Consciousness.</strong> 
+          
+          <br />
+          <strong style={{color: 'white'}}>What?</strong><br />A podcast exploring the scientific intersections of AI, Neuroscience, and Physics, with the ultimate goal of probing the enigma of Human and AI/Machine Consciousness.<br />
+          <br />
+          <strong style={{color: 'white'}}>Why?</strong> <br />There is an urgent need for a concerted scientific effort in understanding Consciousness, as it could play a critical role in AGI safety.<br />
+          <br />
+          <strong style={{color: 'white'}}>When?</strong>  <br />Early 2024 
           <br />
           <br />
-          <h1>
-            <strong style={{color: 'white'}}>Why?</strong>
-          </h1>
-          I strongly believe that there is an urgent need in an acceleration of a concerted scientific effort in understanding an detection of Concsiousness, which must bear results before the impending accent of AGI. 
-          <br /> My conviction is for this to be a critical prerequisite to AGI safety.
-          <br />
-          <br />
-          <h1>
-            <strong style={{color: 'white'}}>When?</strong>
-          </h1>
-          Early 2024 
-          <br />
-          <br />
-          <h1>
-            <strong style={{color: 'white'}}>Who?</strong>
-          </h1>
-          Please feel free to contact me on <a href="https://www.linkedin.com/in/anyapetrova/" style={{color:'white'}}>LinkedIn</a> with any questions and *especially* if you know someone you think I should interview!
+          <strong style={{color: 'white'}}>Who?</strong> <br />Please feel free to contact me on <a href="https://www.linkedin.com/in/anyapetrova/" style={{color:'white'}}>LinkedIn</a>  with any questions, and especially if you know someone you think I should interview!
+
           </div>  
 
-      }
+}
               
 
         {activeContent && 
         
-      <div 
-
-      onClick={() => deactivate()}
-          className={`contentDivStyle ${activeContent ? 'fullScreenOverlay' : ''}`}>
+        <div 
+        
+        onClick={() => deactivate()}
+        className={`contentDivStyle ${activeContent ? 'fullScreenOverlay' : ''}`}>
          
           
          <ActiveContent activeContent={activeContent} setActiveContent={setActiveContent}/>
 
       </div>
-        }
+
+
+
+}
+
+
+
+
     </div>
+
+    
+  </>
+
+    
   );
 }
 
