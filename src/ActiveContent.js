@@ -11,7 +11,7 @@ const contentDictionary = {
     },
     Physics: {
         header: 'Physics',
-        body: "<br /><ul><li><strong style='color:white;'>Quantum Mechanics Interpretations:</strong> <span style='color:gray;'>How do the different interpretations of quantum mechanics explain the role of the observer or consciousness in the physical world?</span></li><br><li><strong style='color:white;'>Theory of Everything:</strong> <span style='color:gray;'>Can we develop a single theory that successfully unifies the four fundamental forces of nature?</span></li><br><li><strong style='color:white;'>Dark Matter and Dark Energy:</strong> <span style='color:gray;'>What are dark matter and dark energy, which seem to dominate the universe's mass-energy content but remain unseen?</span></li><br><li><strong style='color:white;'>Nature of Time:</strong> <span style='color:gray;'>What is the fundamental nature of time, and why does it appear to flow in one direction?</span></li></ul>"
+        body: "<br /><ul><li><strong style='color:white;'>Quantum Mechanics Interpretations:</strong> <span style='color:gray;'>Physicists still cannot agree on the interpretation of quantum mechanics. This, by far, is the most enigmatic mystery in Physics.</span></li><br><li><strong style='color:white;'>Theories of Everything:</strong> <span style='color:gray;'>Can we develop a single theory that unifies all of physics and accurately describes the reality we live in?</span></li><br><li><strong style='color:white;'>Dark Matter and Dark Energy:</strong> <span style='color:gray;'>What are dark matter and dark energy, which seem to dominate the universe's mass-energy content but remain unseen?</span></li><br><li><strong style='color:white;'>Nature of Time:</strong> <span style='color:gray;'>What is the fundamental nature of time, and why does it appear to flow in one direction?</span></li></ul>"
     },
     AI: {
         header: 'AI',
@@ -31,13 +31,12 @@ const contentDictionary = {
     },
     final: {
         header: 'Final Enigma',
-        body: "<br />It's possible that the only path to a scientific understanding of Consciousness goes through the intersection (and collaboration) of all three fields of research: <span style='color: white;'>Physics + AI + Neuroscience. </span> <br /><br /> Delving deeper into the research that fuses all these scientific realms on the quest for unlocking the nature of Consciousness is the key objective of this podcast and the final enigma of all science. "
+        body: "<br />It's possible that the only path to a scientific understanding of Consciousness lies at the intersection of all three fields of research: <br /><span style='color: white;'>Physics + AI + Neuroscience. </span> <br /><br /> My hope is for this podcast to become a platform for an effective discourse between the three realms of research and to support a concerted scientific effort in understanding Consciousness."
     },
     podcast: {
         header: 'FinalEnigma: Podcast',
-        body: '<br /><br /><strong style="color: white;">What?</strong><br />A podcast exploring the scientific intersections of AI, Neuroscience, and Physics, with the ultimate goal of probing the enigma of Human and AI/Machine Consciousness.<br /><br /><strong style="color: white;">Why?</strong> <br />There is an urgent need for a concerted scientific effort in understanding Consciousness, as it could play a critical role in AGI safety.<br /><br /><strong style="color: white;">When?</strong> <br />Early 2024<br /><br /><br /><br /> <strong style="color: white;"> * PLEASE * </strong> when back home view this site on your laptop/computer for a pleasant interactive experience! It really sucks on the phone :)'
+        body: '<br /><br /><strong style="color: white;">What?</strong><br />A podcast exploring the scientific intersections of AI, Neuroscience, and Physics, with the ultimate goal of probing the enigma of Human and AI/Machine Consciousness.<br /><br /><strong style="color: white;">Why?</strong> <br />There is an urgent need for a concerted scientific effort in understanding Consciousness, as it could play a critical role in AGI safety.<br /><br /><strong style="color: white;">When?</strong> <br />2025<br /><br /><br /><br /> <strong style="color: white;"> '
     },
-    // Add more content as needed
 };
 
 const transitionStyle = {

@@ -23,6 +23,16 @@ function Circles() {
     setShowEyeSet1(false)
     setShowEyeSet2(false)
     setShowEyeSet3(false)
+    
+    // Force a re-render of the form
+    const formElement = document.querySelector('.ml-embedded');
+    if (formElement) {
+      formElement.style.display = 'none';
+      // Use setTimeout to ensure the display change is processed
+      setTimeout(() => {
+        formElement.style.display = 'block';
+      }, 0);
+    }
   }
 
 
@@ -55,22 +65,19 @@ function Circles() {
 
       <div className='leftContentDivStyle' style={{ opacity: dimContent ? 0.3 : 1 }}>
         
-        <h1>
-              <strong style={{color: 'white'}}>A Podcast that explores enigmas at the intersection of AI, Neuroscience, and Physics</strong>
+      <h1>
+              <strong style={{color: 'white', fontSize: '1rem'}}>A Podcast that explores enigmas at the intersection of AI, Neuroscience, and Physics</strong>
           </h1>
 
           <br />
           I am launching a podcast that will explore the topics at the intersection of <br /> AI, Neuroscience, and Physics.
           <br />
           <br />
-          Since you came are on this page, you must are either a friend or someone I would love to interview! 
-          
-          <br /> <br /> I will have more information on the podcast here soon. Meanwhile, the vienn diagram to the right is a visual representation of the podcast's scope.
-          
-          <br /> <br /> Feel free to reach out any questions : <br />finalenigmashow gmail com
-          
-          {/* <br />The rapid development of AI technology has sparked debate about the potential consciousness of future AI agents, raising moral, legal, philosophical, and religious questions. Currently, science lacks the means to determine if AGI could possess consciousness. This podcast aims to investigate scientific collaboration at the intersection of three research areas, believing that here lies the key to unraveling the ultimate enigma: the nature of consciousness. */}
-          
+          Since you are on this page, you must be either a friend or someone I would love to interview! 
+
+          <br /> <br /> I will have more information on the podcast here soon. Meanwhile, the Venn diagram to the right is a visual representation of the podcast's scope.
+
+          <br /> <br /> Feel free to reach out with any questions : <br />finalenigmashow gmail com
      
 
       </div>
@@ -93,7 +100,7 @@ function Circles() {
         <div className='contentDivStyle'>
 
 
-          Hover over the diagram to explore example topics and enigmas the podcast explores.
+          Mouse over the diagram!
 
           <br /> 
           <br /> 
@@ -105,15 +112,6 @@ function Circles() {
           
           <Signup />
           
-          {/* <br />
-          <strong style={{color: 'white'}}>What?</strong><br />A podcast exploring the scientific intersections of AI, Neuroscience, and Physics, with the ultimate goal of probing the enigma of Human and AI/Machine Consciousness.<br />
-          <br />
-          <strong style={{color: 'white'}}>Why?</strong> <br />There is an urgent need for a concerted scientific effort in understanding Consciousness, as it could play a critical role in AGI safety.<br />
-          <br />
-          <strong style={{color: 'white'}}>When?</strong>  <br />Early 2024 
-          <br />
-          <br />
-          <strong style={{color: 'white'}}>Who?</strong> <br />Please feel free to contact me on <a href="https://www.linkedin.com/in/anyapetrova/" style={{color:'white'}}>LinkedIn</a>  with any questions, and especially if you know someone you think I should interview! */}
 
           </div>  
 
