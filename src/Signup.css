@@ -1,0 +1,78 @@
+.ml-form-embedSubmitLoad {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: ml-form-embedSubmitLoad 1s ease-in-out infinite;
+    margin: 0 auto;
+}
+
+@keyframes ml-form-embedSubmitLoad {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Style the input field */
+.ml-form-embedSubmitLoad input[type="email"] {
+    background-color: #1a1a1a !important;
+    border: 2px solid #4f46e5 !important;
+    color: #fff !important;
+    padding: 8px 12px !important;
+    border-radius: 4px !important;
+    width: 100% !important;
+    max-width: 300px !important;
+}
+
+/* Style the submit button */
+.ml-form-embedSubmitLoad button {
+    background-color: #4f46e5 !important;
+    color: white !important;
+    border: none !important;
+    padding: 8px 16px !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    margin-top: 8px !important;
+}
+
+/* Style the form container */
+.ml-form-embedSubmitLoad {
+    max-width: 400px !important;
+    margin: 0 auto !important;
+}
+
+.ml-embedded {
+    max-width: 400px !important;
+    margin: 0 auto !important;
+}
+
+/* Style the input field */
+.ml-form-embedBody input[type="email"] {
+    background-color: #1a1a1a !important;
+    border: 2px solid #4f46e5 !important;
+    color: #fff !important;
+    padding: 8px 12px !important;
+    border-radius: 4px !important;
+    width: 100% !important;
+    max-width: 300px !important;
+}
+
+/* Style the submit button */
+.ml-form-embedBody button {
+    background-color: #4f46e5 !important;
+    color: white !important;
+    border: none !important;
+    padding: 8px 16px !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    margin-top: 8px !important;
+}
+
+/* Style the form container */
+.ml-form-embedBody {
+    max-width: 400px !important;
+    margin: 0 auto !important;
+    padding: 20px !important;
+} 

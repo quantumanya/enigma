@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Circles from './Circles';
+import Signup from './Signup';
 
 const App = () => {
   return (
@@ -33,6 +34,15 @@ const App = () => {
           <Circles/>
         </div>
 
+      </div>
+
+      <div style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        paddingBottom: '32pt',
+        paddingTop: '32pt'
+      }}>
+        <Signup />
       </div>
 
     </>
