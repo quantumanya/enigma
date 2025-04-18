@@ -42,7 +42,7 @@ const App = () => {
         paddingBottom: '32pt',
         paddingTop: '32pt'
       }}>
-        <Signup />
+        {/* <Signup /> */}
       </div>
 
     </>

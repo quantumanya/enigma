@@ -99,7 +99,11 @@ function Circles() {
           <br /> 
           (Hint: intersections are most interesting!)
 
-
+          <br />
+          <br />
+          <br />
+          
+          <Signup />
           
           {/* <br />
           <strong style={{color: 'white'}}>What?</strong><br />A podcast exploring the scientific intersections of AI, Neuroscience, and Physics, with the ultimate goal of probing the enigma of Human and AI/Machine Consciousness.<br />
